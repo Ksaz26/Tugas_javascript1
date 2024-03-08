@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salary Details</title>
+<link rel="stylesheet" href=".//CSS/Index.css">
+</head>
+<body>
+
+<h2>Slip Gaji</h2>
+<img src="./IMG/pngwing.com.png" alt="Avatar" style="width:10%;height:10%;">
+
+<p>Jl. Cinta Boulevard No.3 RT 07/02Bintaro, Pesanggrahan, Jaksel, 12330<br>Ibukota Jakarta</p>
+<table>
+    <tr>
+        <td>Nama</td>
+        <td>:</td>
+        <td>Ridwan</td>
+    </tr>
+    <tr>
+        <td>Jabatan</td>
+        <td>:</td>
+        <td>Manager</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>:</td>
+        <td>Menikah</td>
+    </tr>
+</table><br>
+
+<table id="Tablegaji">
+  <thead>
+    <tr>
+      <th colspan="2">Detail Gaji</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gaji Pokok</td>
+      <td id="gajiPokok" align="right"></td>
+    </tr>
+    <tr>
+      <td>Tunjangan Jabatan (15%)</td>
+      <td id="tunjanganJabatan" align="right"></td>
+    </tr>
+    <tr>
+      <td>BPJS (10%)</td>
+      <td id="bpjs" align="right"></td>
+    </tr>
+    <tr>
+      <td>Menikah (20%)</td>
+      <td id="menikah" align="right"></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Total Gaji</td>
+      <td id="totalGaji" align="right"></td>
+    </tr>
+  </tfoot>
+</table>
+<br>
+<p>Mengetahui</p>
+<br><br><br><br>
+<p>Pembuat Slip gaji<br>Salman Alfariz</p>
+
+<script>
+// Hitung tunjangan jabatan, BPJS, dan tunjangan menikah
+let Status ="menikah";
+let tunjangan ="Manager";
+      if(tunjangan == 'Manager'){
+         gajiPokok = 15000000;
+      }else if (tunjangan == 'Asisten Manager'){
+         gajiPokok = 10000000;
+      }else if (tunjangan == 'Staff'){
+         gajiPokok = 5000000;
+     }
+var tunjanganJabatan = gajiPokok * 0.15;
+var bpjs = gajiPokok * 0.10;
+let menikah =(Status=='menikah') ? gajiPokok * 0.20 : 0 ;
+
+// Isi nilai di tabel
+document.getElementById("tunjanganJabatan").textContent = formatNumber(tunjanganJabatan);
+document.getElementById("bpjs").textContent = formatNumber(bpjs);
+document.getElementById("menikah").textContent = formatNumber(menikah);
+document.getElementById("gajiPokok").textContent = formatNumber(gajiPokok);
+
+// Hitung total gaji
+var totalGaji = gajiPokok + tunjanganJabatan + bpjs + menikah;
+document.getElementById("totalGaji").textContent = formatNumber(totalGaji);
+
+// Function untuk memformat angka dengan pemisah ribuan
+function formatNumber(number) {
+    return number.toLocaleString("id-ID");
+}
+</script>
+
+</body>
+</html>

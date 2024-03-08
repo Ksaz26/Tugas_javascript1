@@ -1,0 +1,45 @@
+table {
+    border-collapse: collapse;
+    width: 45%;
+    margin-left:auto;
+    margin-right:auto;
+}
+tbody {
+    border: 2px solid #51829B;
+    text-align: left;
+    background-color: #89CFF3;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+thead{
+    text-align: center;
+    border: 3px solid #51829B;
+    background-color: #89CFF3;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+tfoot{
+    border: 3px solid #51829B;
+    background-color: #89CFF3;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+td{
+    padding: 5px;
+    color: #1B3C73;
+}
+h2{
+    text-align: center;
+    color: #1B3C73;
+}
+p {
+    margin-left: 25%;
+    color: #1B3C73;
+}
+img {
+    margin-left:45%;
+
+}
+body{
+    background-color: #CDF5FD;
+}
+th {
+    color: #1B3C73;
+}
